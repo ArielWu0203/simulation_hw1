@@ -14,8 +14,9 @@ def read(name):
     for i in range(0,shape[0]):
         index = pd.Index(raws.loc[i])
         count = index.value_counts()
-        table.setdefault(count[0],0)
-        table[count[0]] = table[count[0]]+1
+        APs = 520-count[0]
+        table.setdefault(APs,0)
+        table[APs] = table[APs]+1
     sort_table = collections.OrderedDict(sorted(table.items()))
     return sort_table
 
